@@ -1,4 +1,7 @@
 from keyhac import *
+from pprint import pprint
+from pyauto import *
+import pyauto
 
 def configure(keymap):
 	keymap.defineModifier( 29, "User0" )
@@ -8,6 +11,7 @@ def configure(keymap):
 	keymap_global["U0-Q"] = "D-Alt", "F4", "U-Alt"
 
 	for any in ("", "Shift-", "Ctrl-", "Ctrl-Shift-", "Alt-", "Alt-Shift-", "Alt-Ctrl-", "Alt-Ctrl-Shift-", "Win-", "Win-Shift-", "Win-Ctrl-", "Win-Ctrl-Shift-", "Win-Alt-", "Win-Alt-Shift-", "Win-Alt-Ctrl-", "Win-Alt-Ctrl-Shift-"):
+
 		#移動系
 		keymap_global[any + "U0-H"] = any + "Left"
 		keymap_global[any + "U0-J"] = any + "Down"
@@ -22,8 +26,9 @@ def configure(keymap):
 		keymap_global[any + "U0-X"] = any + "Back"
 
 	def _mouse_util():
-		keymap.MouseButtonDownCommand('left')
-		keymap.MouseButtonUpCommand('left')
+		print("Hello World!")
+		pyauto.MouseLeftDown(pyauto.Input.getCursorPos()[0], pyauto.Input.getCursorPos()[1])
+		pyauto.MouseLeftUp(pyauto.Input.getCursorPos()[0], pyauto.Input.getCursorPos()[1])
 
 	#マウス系
 	keymap_global[ "D-U0-F" ] = keymap.MouseButtonDownCommand('left')
