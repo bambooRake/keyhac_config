@@ -24,23 +24,3 @@ def configure(keymap):
 		keymap_global[any + "U0-S"] = any + "Enter"
 		keymap_global[any + "U0-D"] = any + "Delete"
 		keymap_global[any + "U0-X"] = any + "Back"
-
-	def _mouse_util():
-		print("Hello World!")
-		pyauto.MouseLeftDown(pyauto.Input.getCursorPos()[0], pyauto.Input.getCursorPos()[1])
-		pyauto.MouseLeftUp(pyauto.Input.getCursorPos()[0], pyauto.Input.getCursorPos()[1])
-
-	#マウス系
-	keymap_global[ "D-U0-F" ] = keymap.MouseButtonDownCommand('left')
-	keymap_global[ "U-U0-F" ] = keymap.MouseButtonUpCommand('left')
-	keymap_global[ "D-U0-V" ] = keymap.MouseButtonDownCommand('right')
-	keymap_global[ "U-U0-V" ] = keymap.MouseButtonUpCommand('right')
-	keymap_global[ "D-U0-G" ] = keymap.MouseButtonDownCommand('middle')
-	keymap_global[ "U-U0-G" ] = keymap.MouseButtonUpCommand('middle')
-	keymap_global[ "U0-4" ] = keymap.MouseWheelCommand(1.0)
-	keymap_global[ "U0-R" ] = keymap.MouseWheelCommand(-1.0)
-	keymap_global[ "U0-5" ] = keymap.MouseHorizontalWheelCommand(-1.0)
-	keymap_global[ "U0-T" ] = keymap.MouseHorizontalWheelCommand(1.0)
-	keymap_global["F1"] = _mouse_util
-
-
