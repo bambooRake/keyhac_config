@@ -1,7 +1,6 @@
 from keyhac import *
 from pprint import pprint
 from pyauto import *
-import pyauto
 
 def configure(keymap):
 	keymap.defineModifier( 29, "User0" )
@@ -24,3 +23,5 @@ def configure(keymap):
 		keymap_global[any + "U0-S"] = any + "Enter"
 		keymap_global[any + "U0-D"] = any + "Delete"
 		keymap_global[any + "U0-X"] = any + "Back"
+	
+	keymap.ShellExecuteCommand( None, r"C:\\Users\dazs.DESKTOP-PAUGMTC\\.config\\AutoHotKey\\AutoHotkey.exe", "", "" )()
